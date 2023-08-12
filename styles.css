@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    perspective: 10px;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background {
+    transform: translate(-40px);
+    animation: slide-in-background 2.5s forwards;
+}
+
+.foreground {
+    transform: translate(-20px);
+    animation: slide-in-foreground 1.8s forwards;
+}
+
+.background,
+.foreground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+h1 {
+    position: absolute;
+    top: 5rem;
+    transform: translateX(-50%);
+    font-size: 10rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 4px;
+    opacity: 0;
+    animation: slide-in 2s forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-foreground {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slide-in-background {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+
+    }
+}
+
+section {
+    background-color: rgb(45, 45, 45);
+    color: white;
+    padding: 5rem 0;
+}
+.secheading{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg1{
+    background-image: url(https://cdn.britannica.com/74/114874-050-6E04C88C/North-Face-Mount-Everest-Tibet-Autonomous-Region.jpg);
+}
+.bg2{
+    background-image: url(https://cdn.britannica.com/17/83817-050-67C814CD/Mount-Everest.jpg);
+}
+.bg3{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/57/Kangchenjunga%2C_India.jpg);
+}
+.desc{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: black;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
